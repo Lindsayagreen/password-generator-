@@ -5,10 +5,15 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   alert("A password must contain uppercase, lowercase, numbers and special characters.")
-var passWordlength = parseInt (prompt("Enter password length from 8 to 128 characters"));
-// what could we use instead of parseInt
-if (passWordlength < 8 || passWordlength > 128) {
-    // if (length < 8) {
+  var passwordlength = parseInt(prompt("Please choose a password length (between 8 and 128"));
+  if (passwordlength < 8 || passwordlength > 128) {
+    alert("Please enter a numbered length for your password between 8 and 128 please.")
+    return;
+  }
+
+//what and how to use parseInt
+
+  // if (length < 8) {
   //   alert("Password must be greater than 8 characters!")
   // } else if (length > 128) {
   //   alert("Password must be less than 129!")
@@ -60,13 +65,11 @@ var generatedPassword = '';
     var randomIndex = Math.floor(Math.random() * allChars.passWordlength);
     generatedPassword += allChars[randomIndex];
 //what the hell does this mean?
-
 }
 
+return generatedPassword;
 
 
-
-}
 
 function writePassword() {
   var password = generatePassword();
