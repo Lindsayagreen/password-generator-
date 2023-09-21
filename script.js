@@ -5,9 +5,9 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   alert("A password must contain uppercase, lowercase, numbers and special characters.")
-var length = parseInt (prompt("Enter password length from 8 to 128 characters"));
+var passWordlength = parseInt (prompt("Enter password length from 8 to 128 characters"));
 // what could we use instead of parseInt
-if (length < 8 || length > 128) {
+if (passWordlength < 8 || passWordlength > 128) {
     // if (length < 8) {
   //   alert("Password must be greater than 8 characters!")
   // } else if (length > 128) {
@@ -17,15 +17,15 @@ if (length < 8 || length > 128) {
   alert("Invalid length");
   return; 
 }
-}
-
-var lowercaseChars = confirm("Do you want to include lower case characters?")
-var uppercaseChars = confirm("Do you want to include uppercase characters?")
-var numberChars = confirm("Do you want to include numbers?")
-var specialChars = confirm("Do you want to include special characters?")
 
 
-if (!(lowercaseChars || uppercase || numeric || special )) {
+var useLowercaseChars = confirm("Do you want to include lower case characters?")
+var useUppercaseChars = confirm("Do you want to include uppercase characters?")
+var usenumberChars = confirm("Do you want to include numbers?")
+var useSpecialchars = confirm("Do you want to include special characters?")
+
+
+if (!(uselowercaseChars || useuppercaseChars || usenumberChars || usespecialChars)) {
   alert("Please select at least one character type for your password");
   return;
 }
@@ -38,18 +38,36 @@ var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var numberChars = '0123456789';
 var specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
 
-var allChars 
+// var allChars= ''
+// // what does this mean and do?
+
+var allChars = lowercaseChars + uppercaseChars + numberChars + specialChars
+
+// if (useLowercaseChars) 
+//     allChars += lowercaseChars;
+// if (useUppercaseChars) 
+//     allChars += uppercaseChars;
+// if (useNumberChar) 
+//     allChars += numberChars;
+// if (useSpecialchars) 
+//     allChars += specialChars;
+
+//what the hell does this mean?
+
+var generatedPassword = '';
+
+  for (var i = 0; i < passwordlength; i++) {
+    var randomIndex = Math.floor(Math.random() * allChars.passWordlength);
+    generatedPassword += allChars[randomIndex];
+//what the hell does this mean?
+
+}
 
 
 
 
+}
 
-
-
-
-//   return "Generated Password";
-// }
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
