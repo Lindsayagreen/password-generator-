@@ -4,14 +4,12 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  alert("A password must contain uppercase, lowercase, numbers and special characters.")
+  alert("A password must contain uppercase, lowercase, numbers and special characters.");
   var passwordlength = parseInt(prompt("Please choose a password length between 8 and 128"));
   if (passwordlength < 8 || passwordlength > 128) {
-    alert("Please enter a numbered length for your password between 8 and 128 please.")
+    alert("Please enter a numbered length for your password between 8 and 128 please.");
     return;
   }
-
-  //what and how to use parseInt
 
   // if (length < 8) {
   //   alert("Password must be greater than 8 characters!")
@@ -22,14 +20,12 @@ function generatePassword() {
   // alert("Invalid length");
   // return;
 
-
-
   var useLowercaseChars = confirm("Do you want to include lower case characters?")
   var useUppercaseChars = confirm("Do you want to include uppercase characters?")
   var usenumberChars = confirm("Do you want to include numbers?")
   var useSpecialchars = confirm("Do you want to include special characters?")
 
-  console.log (useLowercaseChars, useUppercaseChars, usenumberChars, useSpecialchars)
+  console.log(useLowercaseChars, useUppercaseChars, usenumberChars, useSpecialchars)
 
   if (!useLowercaseChars && !useUppercaseChars && !usenumberChars && !useSpecialchars) {
     alert("Please select at least one character type for your password");
@@ -45,20 +41,19 @@ function generatePassword() {
   var specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
 
   // var allChars= ''
-  // // what does this mean and do?
 
   var allChars = ''
-  console.log (allChars)
-  if (useLowercaseChars) 
-      allChars += lowercaseChars;
-  if (useUppercaseChars) 
-      allChars += uppercaseChars;
-  if (usenumberChars) 
-      allChars += numberChars;
-  if (useSpecialchars) 
-      allChars += specialChars;
-  console.log (allChars)
-  //what the hell does this mean?
+  console.log(allChars)
+  if (useLowercaseChars)
+    allChars += lowercaseChars;
+  if (useUppercaseChars)
+    allChars += uppercaseChars;
+  if (usenumberChars)
+    allChars += numberChars;
+  if (useSpecialchars)
+    allChars += specialChars;
+  console.log(allChars)
+
 
   var createdPassword = '';
 
@@ -66,9 +61,8 @@ function generatePassword() {
     var randomIndex = Math.floor(Math.random() * allChars.length);
     createdPassword += allChars[randomIndex];
   }
-console.log(createdPassword)
+  console.log(creat)
   return createdPassword;
-
 }
 
 function writePassword() {
@@ -79,6 +73,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
