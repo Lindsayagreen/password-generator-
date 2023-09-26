@@ -1,4 +1,3 @@
-// Assignment code here
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -39,8 +38,7 @@ function generatePassword() {
   var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var numberChars = '0123456789';
   var specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
-
-  // var allChars= ''
+  //defines what characters are to be used in the generator 
 
   var allChars = ''
   console.log(allChars)
@@ -53,7 +51,7 @@ function generatePassword() {
   if (useSpecialchars)
     allChars += specialChars;
   console.log(allChars)
-
+  // establishes how character set is to play out depending on user picks
 
   var createdPassword = '';
 
@@ -64,12 +62,14 @@ function generatePassword() {
   console.log(createdPassword)
   return createdPassword;
 }
+// for loop that generates all characters from a specific length 
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+// this function generates the password
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
